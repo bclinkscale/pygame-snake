@@ -256,4 +256,4 @@ def start_game():
         clock.tick(get_snake_speed(snake))
 
 # Start the snake game.
-start_game()
+start_game() 
