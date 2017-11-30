@@ -28,15 +28,15 @@ DIRECTION_UP = (0, -1)
 DIRECTION_DOWN = (0, 1)
 
 # Background color of the snake grid.
-COLOR_BACKGROUND = (255, 255, 255)  # rgb color for white
+COLOR_BACKGROUND = (18, 173, 208)  # rgb color for white
 # This is the color of the snake's head. 
-COLOR_SNAKE_HEAD = (255, 0, 0)      # rgb color for red
+COLOR_SNAKE_HEAD = (251, 163, 48)      # rgb color for red
 # This is the color of the rest of the snake.
-COLOR_SNAKE = (0, 255, 0)           # rgb color for green
+COLOR_SNAKE = (205, 80, 39)           # rgb color for green
 # This is the color for the snake's food.
-COLOR_FOOD = (255, 200, 0)          # rgb color for orange
+COLOR_FOOD = (232, 28, 37)          # rgb color for orange
 # This is the color for the game over text.
-COLOR_GAME_OVER_TEXT = (0, 0, 0)    # rgb color for black
+COLOR_GAME_OVER_TEXT = (25, 157, 73)    # rgb color for black
 
 def get_direction(previous_direction, event_key):
     """Return the new direction of the snake: one of DIRECTION_{LEFT,RIGHT,UP,DOWN}.
@@ -193,6 +193,8 @@ def process_events(direction, game_over):
     for event in pygame.event.get():
         # Quit the program when the user presses the x in the corner of the window.
         if event.type == pygame.QUIT:
+            pygame.display.quit()
+            pygame.quit()
             sys.exit()
         # Process events when the user presses a key on the keyboard.
         # https://www.pygame.org/docs/ref/key.html
@@ -256,4 +258,4 @@ def start_game():
         clock.tick(get_snake_speed(snake))
 
 # Start the snake game.
-start_game() 
+start_game()
